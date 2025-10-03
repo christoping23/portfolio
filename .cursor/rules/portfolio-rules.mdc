@@ -1,0 +1,82 @@
+---
+alwaysApply: true
+---
+
+## Portfolio Rules — Etsy E‑commerce
+
+### Modern design
+- Use a clean, spacious layout with a consistent 8px spacing scale and a 12‑column responsive grid.
+- Limit the color palette (primary, neutral, accent). Maintain accessible contrast (WCAG AA: 4.5:1 for body, 3:1 for large text).
+- Choose one display font for headings and a highly legible sans‑serif for body (16–18px base, 1.5–1.7 line height).
+- Prefer subtle motion: 150–250ms easing, reduce motion for users with prefers‑reduced‑motion.
+- Support light and dark themes with a visible theme toggle; persist choice in localStorage.
+- Use semantic HTML and clear hierarchy: a single H1 per page, meaningful H2/H3 for sections.
+- Keep visual noise low: clear sections, generous whitespace, consistent card components, and restrained shadows.
+
+### Structure & content
+- Above‑the‑fold: name, "Etsy e‑commerce" tagline, 1–2 line value proposition (niche, differentiation, proof), primary CTA (Shop on Etsy / Contact).
+- Core sections: About, Featured Products/Projects, Shop Operations, Experience, Skills, Contact. Optional: Photography/Branding.
+- Featured Products/Projects: 4–6 items. For each, show product goal, role (design, SEO, ops), stack/tools, 1–3 quantified outcomes (CTR, conversion rate, revenue, AOV), hero photo/mockup, and links (Etsy listing, case study).
+- Experience: highlight e‑commerce impact (listing SEO wins, fulfillment SLAs, review ratings, repeat‑buyer growth).
+- Skills: group by Design/Brand, Marketing/SEO, Operations/Customer Care, Data/Optimization.
+- Contact: Etsy shop link, email, short form, social. Include a downloadable PDF résumé.
+
+### Etsy focus keywords (place near top)
+- Etsy SEO, Listing Optimization, Product Photography, Etsy Ads, Shop Management, Conversion Rate Optimization, A/B Testing, Pricing Strategy, Seasonal Campaigns, Inventory, Fulfillment, Customer Support, Reviews, Brand Identity, Packaging, Mockups, Print‑on‑Demand (if relevant).
+
+### Resume keyword strategy
+- Mirror Etsy ecosystem terms (listings, tags, attributes, categories, variations, materials), marketing levers (Etsy Ads, coupons, sales), and buyer journey phrases (favorites, cart adds, messages).
+- Weave keywords into product blurbs, photography alt text, headings, case‑study metrics; avoid stuffing.
+- Keep a short "Etsy Focus Keywords" cluster near the top; expand with a skills matrix below.
+- Structured data: JSON‑LD for Person, Organization, Product, Offer, AggregateRating, Review, BreadcrumbList.
+- Sample keyword bank (tailor to you):
+  - E‑commerce/Etsy: Etsy SEO, Listing Optimization, Tags, Attributes, Variations, Pricing Strategy, Etsy Ads, Promotions, Reviews Management, Repeat Buyers
+  - Design/Brand: Adobe (Photoshop), Product Photography, Retouching, Color Correction, Brand Identity, Packaging, Mockups
+  - Operations: Order Fulfillment, Inventory, Processing Time, Shipping Profiles, Returns/Exchanges, SLAs
+  - Data/Optimization: Conversion Rate Optimization, A/B Testing, Analytics, UTM Tracking, AOV, LTV
+  - Soft skills: Collaborator, Problem Solver, Leadership, Communication, Customer Empathy
+
+### Practical UX guidelines
+- Skimmable product‑first layout: crisp product grid, clear pricing, ratings, badges (bestseller/new), free shipping indicators.
+- Prominent CTAs: per product (View on Etsy, Add to Favorites), global (Shop on Etsy, Contact, Download Résumé).
+- Trust builders: review snippets, buyer photos, secure checkout copy, shipping/returns policy highlights.
+- Variations UX: clear size/color swatches, size guides, low‑stock messaging, delivery estimates.
+- Listing pages/case studies: hero image, details, materials, care, FAQs, social proof, cross‑sell.
+- Keyboard navigation, visible focus states, descriptive link text.
+
+### Performance & accessibility
+- Target Lighthouse ≥ 90 across categories.
+- Image discipline for product photography: AVIF/WEBP, responsive srcset, lazy‑load below fold, exact dimensions to prevent CLS.
+- Preload above‑the‑fold hero and critical fonts; defer non‑critical JS; code‑split sections.
+- Alt text conveys product specifics (material, style, use case) not decoration; minimal ARIA used well.
+
+### SEO & metadata
+- Titles and descriptions emphasize niche and value (e.g., "Handmade Minimalist Jewelry — Etsy SEO + Product Photography").
+- Open Graph/Twitter with product imagery; add canonical URLs and sitemap.
+- Use descriptive slugs (e.g., /projects/etsy‑listing‑seo‑revamp).
+- JSON‑LD: `Product`, `Offer` (price, currency, availability), `AggregateRating`, `Review`, `MerchantReturnPolicy`.
+
+### Writing style
+- Active, specific, conversion‑oriented. Use When + Action + Metric + Scope.
+- Quantify outcomes (impressions, CTR, conversion rate, AOV, revenue, review rating). If numbers are sensitive, use relative metrics (e.g., ~30% uplift).
+- Avoid jargon; define acronyms on first use.
+
+### Quality bar & review checklist
+- Readability pass: headings scan tell the story without body text.
+- Mobile‑first review at 320px, then tablet and desktop breakpoints.
+- Accessibility pass (keyboard only, screen reader basics), contrast check, and reduced‑motion check.
+- Broken links, 404 handling, and graceful empty states.
+
+### Don’ts
+- Don’t stuff Etsy tags/keywords; keep language natural for buyers and search.
+- Don’t over‑process photos; preserve true color/texture.
+- Don’t auto‑play media with sound; avoid heavy animations and parallax.
+
+### Implementation notes
+- Prefer a modern stack with great DX and hosting: Next.js + TypeScript + Tailwind CSS, deployed to Vercel.
+- Connect to Etsy via storefront links; optionally surface Etsy shop stats via screenshots or public endpoints if available.
+- Keep content editable via lightweight CMS/MDX; automate image optimization; generate the résumé PDF from the same source.
+
+### Highlighted skills for Etsy
+- Design/Adobe: Adobe (Photoshop) for retouching, color correction, composites, mockups.
+- Soft skills: Collaborator, Problem Solver, Leadership.
