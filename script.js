@@ -19,11 +19,31 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 // Mobile nav toggle
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.querySelector(".nav-links");
+const navLinkItems = document.querySelectorAll(".nav-links a");
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
     navToggle.classList.toggle("open");
+  });
+
+  // Close menu after clicking a nav link
+  navLinkItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      navToggle.classList.remove("open");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", e => {
+    const clickedInsideNav =
+      navToggle.contains(e.target) || navLinks.contains(e.target);
+
+    if (!clickedInsideNav) {
+      navLinks.classList.remove("open");
+      navToggle.classList.remove("open");
+    }
   });
 }
 
