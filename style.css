@@ -80,6 +80,7 @@ section {
   z-index: 50;
   background: rgba(5, 6, 8, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
 }
 
 .nav-container {
@@ -161,7 +162,6 @@ section {
   width: 100%;
 }
 
-/* Remove underline animation from Hire Me button */
 .nav-cta::after {
   display: none;
 }
@@ -416,8 +416,39 @@ section {
   gap: 1.7rem;
 }
 
+/* Service card top alignment */
+.service-top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.service-top h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.service-card .card-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
 .services-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: stretch;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card p,
+.service-card ul,
+.service-card .card-result {
+  margin-top: 0;
 }
 
 .card {
@@ -649,6 +680,7 @@ section {
 .slider-control.next {
   right: 0.8rem;
 }
+
 /* Contact */
 .contact-grid {
   display: grid;
@@ -766,7 +798,6 @@ textarea {
 @media (max-width: 960px) {
   .hero-inner,
   .grid-2col,
-  .services-grid,
   .portfolio-grid,
   .why-grid,
   .contact-grid {

@@ -47,7 +47,7 @@ if (navToggle && navLinks) {
   });
 }
 
-// Highlight active nav link on scroll (optimized)
+// Highlight active nav link on scroll
 const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-link");
 
@@ -127,6 +127,11 @@ function showTestimonial(index) {
   });
 }
 
+function restartTestimonials() {
+  clearInterval(testimonialInterval);
+  startTestimonials();
+}
+
 function startTestimonials() {
   if (testimonials.length > 1) {
     testimonialInterval = setInterval(() => {
@@ -140,23 +145,31 @@ if (prevBtn && nextBtn && testimonials.length) {
   prevBtn.addEventListener("click", () => {
     testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
     showTestimonial(testimonialIndex);
+    restartTestimonials();
   });
 
   nextBtn.addEventListener("click", () => {
     testimonialIndex = (testimonialIndex + 1) % testimonials.length;
     showTestimonial(testimonialIndex);
+    restartTestimonials();
   });
 
   startTestimonials();
 }
 
-// Contact form (front-end only demo)
+// Contact form
 const contactForm = document.getElementById("contactForm");
 const formSuccess = document.getElementById("formSuccess");
 
 if (contactForm && formSuccess) {
   contactForm.addEventListener("submit", async e => {
     e.preventDefault();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
 
     const formData = new FormData(contactForm);
 
@@ -184,6 +197,9 @@ if (contactForm && formSuccess) {
     } catch (error) {
       formSuccess.textContent = "Network error. Please try again later.";
       formSuccess.style.display = "block";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
     }
   });
 }
