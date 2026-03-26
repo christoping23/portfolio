@@ -711,9 +711,13 @@ textarea {
 
 .form-success {
   display: none;
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
   color: #6de3b1;
+  background: rgba(109, 227, 177, 0.08);
+  border: 1px solid rgba(109, 227, 177, 0.18);
 }
 
 /* Footer */

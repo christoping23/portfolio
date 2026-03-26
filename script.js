@@ -135,14 +135,36 @@ const contactForm = document.getElementById("contactForm");
 const formSuccess = document.getElementById("formSuccess");
 
 if (contactForm && formSuccess) {
-  contactForm.addEventListener("submit", e => {
+  contactForm.addEventListener("submit", async e => {
     e.preventDefault();
-    formSuccess.style.display = "block";
-    contactForm.reset();
 
-    setTimeout(() => {
-      formSuccess.style.display = "none";
-    }, 6000);
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        formSuccess.textContent = "Thanks! Your message has been sent successfully.";
+        formSuccess.style.display = "block";
+        contactForm.reset();
+
+        setTimeout(() => {
+          formSuccess.style.display = "none";
+        }, 6000);
+      } else {
+        formSuccess.textContent = "Something went wrong. Please try again.";
+        formSuccess.style.display = "block";
+      }
+    } catch (error) {
+      formSuccess.textContent = "Network error. Please try again later.";
+      formSuccess.style.display = "block";
+    }
   });
 }
 

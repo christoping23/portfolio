@@ -406,57 +406,70 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-copy reveal">
-        <h2>Tell me about your next project</h2>
-        <p>
-          Share a bit about your brand, your goals, and where you’re stuck.
-          I’ll reply with practical solutions, timelines, and clear next steps—ready to apply my hands-on experience
-          to help your content grow.
-        </p>
-        <ul class="contact-points">
-          <li>Perfect for YouTubers, creators, agencies, and small businesses</li>
-          <li>We can work one-off, on retainer, or test a pilot project</li>
-          <li>Remote friendly. I collaborate worldwide.</li>
-        </ul>
-        <p class="contact-note">Prefer email? Reach me at <strong>your.email@example.com</strong></p>
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-copy reveal">
+      <h2>Let’s connect</h2>
+      <p>
+        If you're looking for someone who can contribute in video editing, graphic design,
+        social media, or content optimization, I’d be glad to connect and discuss opportunities.
+      </p>
+      <ul class="contact-points">
+        <li>Open to full-time, part-time, freelance, or internship opportunities</li>
+        <li>Interested in creative, content, and digital media roles</li>
+        <li>Available for remote collaboration and flexible work setups</li>
+      </ul>
+      <p class="contact-note">Prefer email? Reach me at <strong>youremail@gmail.com</strong></p>
+    </div>
+
+    <form
+      class="contact-form reveal"
+      id="contactForm"
+      action="https://formspree.io/f/mlgoeonw"
+      method="POST"
+    >
+      <div class="form-row">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
       </div>
 
-      <form class="contact-form reveal" id="contactForm">
-        <div class="form-row">
-          <label for="name">Name*</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
-        </div>
+      <div class="form-row">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
 
-        <div class="form-row">
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-        </div>
+      <div class="form-row">
+        <label for="projectType">What is this about?</label>
+        <select id="projectType" name="projectType">
+          <option value="">Select an option</option>
+          <option value="job-opportunity">Job Opportunity</option>
+          <option value="freelance-project">Freelance Project</option>
+          <option value="internship">Internship</option>
+          <option value="collaboration">Collaboration</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
 
-        <div class="form-row">
-          <label for="projectType">What do you need help with?</label>
-          <select id="projectType" name="projectType">
-            <option value="">Select an option</option>
-            <option value="video-editing">Video Editing</option>
-            <option value="design">Graphic Design</option>
-            <option value="social-media">Social Media Management</option>
-            <option value="seo">SEO & Keyword Research</option>
-            <option value="other">A mix / Something else</option>
-          </select>
-        </div>
+      <div class="form-row">
+        <label for="message">Message*</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell me about the opportunity or message..."
+          required
+        ></textarea>
+      </div>
 
-        <div class="form-row">
-          <label for="message">Project details*</label>
-          <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-        </div>
+      <!-- Optional extras -->
+      <input type="hidden" name="_subject" value="New portfolio contact submission" />
+      <input type="hidden" name="_captcha" value="false" />
 
-        <button type="submit" class="btn primary-btn full-width">Send Message</button>
-        <p class="form-success" id="formSuccess">Thanks! Your message has been sent.</p>
-      </form>
-    </div>
-  </section>
+      <button type="submit" class="btn primary-btn full-width">Send Message</button>
+      <p class="form-success" id="formSuccess"></p>
+    </form>
+  </div>
+</section>
 
   <footer class="footer section">
     <div class="container footer-inner">
